@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "app.GrpcServices";
+
+service ChatService {
+  rpc StreamChat (Empty) returns (stream ChatMessage);
+}
+
+message ChatMessage {
+  string user = 1;
+  string message = 2;
+  string timestamp = 3;
+}
+
+message Empty {}
