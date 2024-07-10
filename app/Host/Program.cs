@@ -1,10 +1,10 @@
-﻿using app.GrpcServices;
-using Grpc.Core;
+﻿using Grpc.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using WebServices.GrpcServices;
+using WebServices.Protos;
 
 public class Program
 {

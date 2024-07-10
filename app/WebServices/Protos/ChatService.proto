@@ -1,9 +1,17 @@
 syntax = "proto3";
 
-option csharp_namespace = "app.GrpcServices";
+option csharp_namespace = "WebServices.Protos";
+
+package GrpcServices;
 
 service ChatService {
   rpc StreamChat (Empty) returns (stream ChatMessage);
+  rpc TestChatMessage (ChatMessage) returns (Empty);
+  
+  // Todo: Remove this after testing
+  // Testing Endpoints
+  rpc HelloWorld (Empty) returns (HelloWorldResponse);
+  rpc HelloStream (Empty) returns (stream HelloWorldResponse);
 }
 
 message ChatMessage {
@@ -13,3 +21,10 @@ message ChatMessage {
 }
 
 message Empty {}
+
+
+
+// Todo: Remove this after testing
+message HelloWorldResponse {
+  string message = 1;
+}

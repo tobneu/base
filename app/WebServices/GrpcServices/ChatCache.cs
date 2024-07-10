@@ -1,5 +1,5 @@
 ﻿using System.Collections.Concurrent;
-using app.GrpcServices;
+using WebServices.Protos;
 
 namespace WebServices.GrpcServices;
 
@@ -9,8 +9,6 @@ public class ChatCache
     public static ChatCache Instance => _instance.Value;
 
     private readonly ConcurrentQueue<ChatMessage> _messages = new();
-
-    private ChatCache() {}
 
     public void AddMessage(ChatMessage message)
     {
